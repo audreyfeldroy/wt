@@ -16,8 +16,8 @@ class TweetFrame(wx.Frame):
         box = wx.BoxSizer(wx.VERTICAL)
 
         # Username dropdown
-        self.usernameList = ['audrey71', 'danny04', 'cartwheel51']
-        comboBox = wx.ComboBox(self, choices=self.usernameList, style=wx.CB_DROPDOWN)
+        self.usernameList = ['audrey71', 'danny04', 'cartwheel51', 'Add new username...']
+        comboBox = wx.ComboBox(self, choices=self.usernameList, style=wx.CB_READONLY, value=self.usernameList[0])
         box.Add(comboBox, flag=wx.EXPAND)
 
         # Tweets static control
