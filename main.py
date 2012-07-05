@@ -12,16 +12,20 @@ class TweetFrame(wx.Frame):
         menuBar.Append(menu, "&File")
         self.SetMenuBar(menuBar)
 
-        # Top controls
-        topPanel = wx.Panel(self)
+        # BoxSizer holds all controls below menu
+        box = wx.BoxSizer(wx.VERTICAL)
+
+        # Username dropdown
         self.usernameList = ['audrey71', 'danny04', 'cartwheel51']
         comboBox = wx.ComboBox(self, choices=self.usernameList, style=wx.CB_DROPDOWN)
+        box.Add(comboBox, flag=wx.EXPAND)
 
-        # Main usable area
-        mainpanel = wx.Panel(self)
-        box = wx.BoxSizer(wx.VERTICAL)
-        box.Add(wx.StaticText(panel, label="Some tweet"))
+        # Tweets static control
+        tweets = wx.StaticText(self, label="Some tweet asfdas sadfj kasdj fldksj sdklf jlskd lskdf skld fsdklf jsdklj dslf jsdl skldfjasdkljf lskdj flksdjf lkdjf ksdj ksdjf sdkjkl ds.")
+        box.Add(tweets, flag=wx.EXPAND)
 
+        # Set the BoxSizer and show the frame
+        self.SetSizer(box)
         self.Show()
 
 
